@@ -1,3 +1,6 @@
+// this involves other files/dependencies from npm/express, but is not in the folder for brevity... The dependencies used were in the package.json were
+// express and body-parser, the latter of which is used to parse data posted by a user at a particular route.
+
 const express = require("express");
 const bodyParser = require("body-parser");
 
