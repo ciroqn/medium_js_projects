@@ -22,15 +22,19 @@ app.post("/", function(req, res) {
   https.get(url, function(response) {
     console.log(response.statusCode);
 
+    // when data is received, 'JSON-ify' the data from OpenWeather API ready for sorting
     response.on("data", function(data) {
+      // note JSON.parse() as opposed to JSON.stringify() which gives a simliar structure to JS objects
       const weatherData = JSON.parse(data);
       console.log(weatherData);
       let temp = weatherData.main.temp;
       let description = weatherData.weather[0].description;
       let weatherIconId = weatherData.weather[0].icon;
+      // See OpenWeather docs
       let iconUrl = "http://openweathermap.org/img/wn/" + weatherIconId + "@2x.png";
       res.write("<h1>The temperature in " + city + " is " + temp + " degrees Celsius.</h1>");
       res.write("<img src="+iconUrl+">");
+      // Only one .send() per .post() and .get() hence the use of .write() above for multiple lines
       res.send();
     })
   });
