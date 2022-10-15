@@ -16,7 +16,7 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res) {
   let city = req.body.cityName;
-  let apiKey = "your_API_key_here;
+  let apiKey = "your_API_key_here";
   let units = "metric";
   const url = "https://api.openweathermap.org/data/2.5/weather?&q=" + city + "&units=" + units + "&appid=" + apiKey;
   https.get(url, function(response) {
@@ -31,7 +31,7 @@ app.post("/", function(req, res) {
       let iconUrl = "http://openweathermap.org/img/wn/" + weatherIconId + "@2x.png";
       res.write("<h1>The temperature in " + city + " is " + temp + " degrees Celsius.</h1>");
       res.write("<img src="+iconUrl+">");
-      res.send()
+      res.send();
     })
   });
 })
