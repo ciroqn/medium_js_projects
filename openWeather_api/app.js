@@ -19,6 +19,7 @@ app.post("/", function(req, res) {
   let apiKey = "your_API_key_here";
   let units = "metric";
   const url = "https://api.openweathermap.org/data/2.5/weather?&q=" + city + "&units=" + units + "&appid=" + apiKey;
+  // https.get(...) gets the data from the weather API. It takes in the url that we're interested in
   https.get(url, function(response) {
     console.log(response.statusCode);
 
