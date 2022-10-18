@@ -45,11 +45,11 @@ app.post("/", function(req, res) {
 
   // send data to this url. Note the paramaters which has the list, or audience id, which tells mailchimp which list the
   // data will be added to
-  let url = "https://us21.api.mailchimp.com/3.0/lists/8bfe4e78ae";
+  let url = "https://usX.api.mailchimp.com/3.0/lists/idList";
 
   let options = {
     method: "POST",
-    auth: "marcus:f5ff93ef85981afc5956a4050e9129e5-us21"
+    auth: "marcus:apikey"
   }
 
   // https module sending data to mailchimp server. We then catch the data sent back in response from the mailchimp server
