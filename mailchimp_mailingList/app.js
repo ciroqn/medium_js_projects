@@ -49,7 +49,7 @@ app.post("/", function(req, res) {
 
   let options = {
     method: "POST",
-    auth: "marcus:apikey"
+    auth: "anystring:apikey"
   }
 
   // https module sending data to mailchimp server. We then catch the data sent back in response from the mailchimp server
