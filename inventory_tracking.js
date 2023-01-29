@@ -29,6 +29,7 @@ class Media {
     let sum = this._ratings.reduce((accumulator, currentValue) => {
       return accumulator + currentValue;
     });
+    // note: toFixed(n) returns a string, hence parseFloat(...)
     return parseFloat((sum / len).toFixed(1));
   }
 
