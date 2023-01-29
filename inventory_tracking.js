@@ -26,9 +26,10 @@ class Media {
 
   getAverageRating() {
     let len = this._ratings.length
-    this._ratings.reduce((accumulator, currentValue) => {
-      return (accumulator + currentValue)/len;
-    })
+    let sum = this._ratings.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    });
+    return parseFloat((sum / len).toFixed(1));
   }
 
   addRating(newRating) {
