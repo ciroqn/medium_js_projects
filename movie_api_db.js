@@ -5,7 +5,7 @@ const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 const playBtn = document.getElementById('playBtn');
 
 const getGenres = async () => {
-  const genereRequestEndpoint = '/genre/movie/list';
+  const genreRequestEndpoint = '/genre/movie/list';
   const requestParams = `?api_key=${tmdbKey}`;
   const urlToFetch = `${tmdbBaseUrl}${genereRequestEndpoint}${requestParams}`;
   try {
