@@ -1,3 +1,5 @@
+// Using the TMDB database. API key needed.
+
 const tmdbKey = '<api_key>';
 const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 const playBtn = document.getElementById('playBtn');
