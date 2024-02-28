@@ -28,7 +28,7 @@ const getGenres = async () => {
   }
 };
 
-const getMovies = () => {
+const getMovies = async () => {
   const selectedGenre = getSelectedGenre();
   // get endpoint
   const discoverMovieEndpoint = '/discover/movie';
