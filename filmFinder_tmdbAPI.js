@@ -79,6 +79,11 @@ const showRandomMovie = () => {
   if (movieInfo.childNodes.length > 0) {
     clearCurrentMovie();
   };
+  // display info
+  const movies = await getMovies();
+  const randomMovie = getRandomMovie(movies);
+  const info = await getMovieInfo(randomMovie);
+  displayMovie(info);
 
 };
 
