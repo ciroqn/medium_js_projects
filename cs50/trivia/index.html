@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+           <script>
+
+            // Load the DOM before adding event listeners
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Select the tags with correct and incorrect class. Select ALL incorrect classes
+                let correct = document.querySelector('.correct');
+                let incorrect = document.querySelectorAll('.incorrect');
+
+                // Add listener to correct answer
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'Green';
+                    document.querySelector('#p1_feedback').innerHTML = 'Correct!';
+                });
+
+                // Add event listeners to ALL incorrect answers (using a loop)
+                for (let i = 0; i < incorrect.length; i++) {
+                    incorrect[i].addEventListener('click', function() {
+                    incorrect[i].style.backgroundColor = 'Red';
+                    document.querySelector('#p1_feedback').innerHTML = 'Incorrect...';
+                });
+                }
+
+                // Get text input tag
+                let txt_input = document.querySelector('#capital');
+
+                // Add event listener to text input button
+                document.querySelector('.txt').addEventListener('click', function() {
+                    let txt_input_HTML = txt_input.value;
+                    if (txt_input_HTML === 'Ouagadougou') {
+                        txt_input.style.backgroundColor = 'Green';
+                        document.querySelector('#p2_feedback').innerHTML = 'Correct!';
+                    }
+                    else {
+                        txt_input.style.backgroundColor = 'Red';
+                        document.querySelector('#p2_feedback').innerHTML = 'Incorrect...';
+                    }
+                })
+            })
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>Roughly the size of a chicken, which bird lays the largest egg relative to its size?</h3>
+                 <p id='p1_feedback'></p>
+                 <button class="incorrect">Ostrich</button>
+                 <button class="correct">Kiwi</button>
+                 <button class="incorrect">Oriole</button>
+                 <button class="incorrect">Bald Eagle</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>What is the capital of Burkina Faso?</h3>
+                 <input type='text' id='capital' placeholder='Type your answer'>
+                 <button type='submit' class='txt'>Check</button>
+                 <p id='p2_feedback'></p>
+            </div>
+        </div>
+    </body>
+</html>
